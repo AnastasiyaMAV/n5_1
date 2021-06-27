@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Позиционирование</title>
+    <style> /**/
+        p,
+        header,
+        main,
+        nav,
+        section,
+        aside,
+        footer,
+        .div1,
+        .div2{
+            border: 1px solid blue;
+        }
+
+        header,
+        footer{
+            flex: 0 0 content; /*не сжирают пространство и не ужимаются*/
+            background-color: rebeccapurple;
+        }
+
+        main{
+            flex: 1; /*сжирает пространство*/
+            display: flex;
+            flex-direction: row;
+            justify-content: stretch; /*растягивался на всю высоту*/
+        }
+
+        body{
+            display: flex;
+            flex-flow: column;
+            min-height: 100vh; /*размер подгонятеся по 100%*/
+        }
+
+        nav{ /*навигация - 20% ширины  <nav class="nav">Меню</nav>*/
+            width: 20vh; 
+        }
+
+        aside{/*боковая панель - 20% ширины*/
+            width: 20vh; 
+        } 
+
+        section{
+            display: flex;
+            flex: 1; /*сжирает пространство*/
+            justify-content: space-between; /*эл-ты равномерно распределены от начала до конца контейнера с отступами между др.др.*/          
+            
+        }
+
+        .div1{
+            /*display: flex; */
+            flex: 0 0 50vh;
+            align-items: flex-start;
+            /*flex-direction: row;
+            justify-content: flex-start; */
+        }
+
+        .div2{
+            /*display: flex; */
+            flex: 0 0 100vh;
+            align-items: flex-end;
+            /*flex-direction: row;
+            justify-content: flex-start; */
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        Шапка страницы
+    </header>
+    <main class="main">
+        
+        <section class="section">
+            <p>Основная часть</p>
+            <div class="div1">!!!!!!!!!!!!!!!!!!!</div>
+            <div class="div1">???????????????????</div>
+            <div class="div2">111111111</div>
+        </section>
+        <aside class="aside">Сбоку</aside>
+    </main>
+    <footer class="footer">Футер</footer>
+</body>
+</html>
