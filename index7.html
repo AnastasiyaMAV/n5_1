@@ -5,84 +5,81 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Позиционирование</title>
-    <style> /**/
-        p,
-        header,
-        main,
-        nav,
-        section,
-        aside,
-        footer,
-        .div1,
-        .div2{
-            border: 1px solid blue;
-        }
-
-        header,
-        footer{
+    <style>
+        .header1{
+            display: flex;
             flex: 0 0 content; /*не сжирают пространство и не ужимаются*/
             background-color: rebeccapurple;
+            justify-content: center;
+        } 
+        
+        .footer1{
+            display: flex;
+            flex: 1;/*0 0 content; не сжирают пространство и не ужимаются*/
+            background-color: rebeccapurple;           
+            justify-content: space-between;
+            align-items: center; 
         }
 
-        main{
+        .main1{
             flex: 1; /*сжирает пространство*/
             display: flex;
             flex-direction: row;
             justify-content: stretch; /*растягивался на всю высоту*/
         }
 
-        body{
+        .body1{
             display: flex;
             flex-flow: column;
             min-height: 100vh; /*размер подгонятеся по 100%*/
         }
 
-        nav{ /*навигация - 20% ширины  <nav class="nav">Меню</nav>*/
-            width: 20vh; 
-        }
-
-        aside{/*боковая панель - 20% ширины*/
-            width: 20vh; 
+        .aside1{/*боковая панель - 20% ширины*/
+            width: 20vh;
+            background-color: rgb(176, 117, 235);  
         } 
 
-        section{
+        .section1{
             display: flex;
             flex: 1; /*сжирает пространство*/
-            justify-content: space-between; /*эл-ты равномерно распределены от начала до конца контейнера с отступами между др.др.*/          
+            justify-content: space-around ;/*эл-ты равномерно расположены от начала до конца контейнера с отступами между др.др, а также от краев контейнера*/          
+            background-color: rgb(145, 47, 243);  
+            flex-wrap: wrap; /*элементы переносятся на следующие строки, если не помещаются в одну*/ 
+            align-content: space-between; /*первая и последняя строки прижаты к краям*/ 
             
         }
 
         .div1{
-            /*display: flex; */
             flex: 0 0 50vh;
-            align-items: flex-start;
-            /*flex-direction: row;
-            justify-content: flex-start; */
+            height:  10vh;
+            background-color: yellow;
         }
 
         .div2{
-            /*display: flex; */
-            flex: 0 0 100vh;
-            align-items: flex-end;
-            /*flex-direction: row;
-            justify-content: flex-start; */
+            flex: 0 0 150vh;
+            height:  25vh;
+            background-color: rgb(224, 224, 93);
+            
         }
     </style>
 </head>
-<body>
-    <header class="header">
-        Шапка страницы
+<body class="body1">
+    <header class="header1">
+        <h1>Шапка страницы</h1>
     </header>
-    <main class="main">
-        
-        <section class="section">
-            <p>Основная часть</p>
+    <main class="main1">        
+        <section class="section1">
             <div class="div1">!!!!!!!!!!!!!!!!!!!</div>
-            <div class="div1">???????????????????</div>
-            <div class="div2">111111111</div>
+            <div class="div1">!!!!!!!!!!!!!!!!!!!</div>
+            <div class="div2">???????????????????</div>
         </section>
-        <aside class="aside">Сбоку</aside>
+        <aside class="aside1">Сбоку пока пусто</aside>
     </main>
-    <footer class="footer">Футер</footer>
+    <footer class="footer1">
+        <div class="div1">!!!!!!!!!!!!!!!!!!!</div>
+        <div class="div1">!!!!!!!!!!!!!!!!!!!</div>
+        <div class="div1">!!!!!!!!!!!!!!!!!!!</div>
+        <div class="div1">!!!!!!!!!!!!!!!!!!!</div>
+    </footer>
 </body>
 </html>
